@@ -93,7 +93,7 @@ Reham Omar, [12/1/2025 11:14 PM]
                 <div class="container"></div>
             </div>
 
-Reham Omar, [12/1/2025 11:14 PM]
+
 <!-- Result Show -->
             <div class="result-show">
                 <div class="container">
@@ -181,7 +181,6 @@ Reham Omar, [12/1/2025 11:14 PM]
                         </ul>
                     </div>
 
-Reham Omar, [12/1/2025 11:14 PM]
 <!-- Address -->
                     <div class="col-12 col-md-4 mb-4">
                         <h5 class="mb-3">Address</h5>
