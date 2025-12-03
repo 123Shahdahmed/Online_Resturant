@@ -4,7 +4,8 @@
     background-repeat: no-repeat;
     display: block;
     width: 100%;
-    height: 80vh;
+    height: 50vh;
+    
     
 }
 .hero {
@@ -193,4 +194,18 @@ a{
 
 @media (min-width: 1200px) {
 }
+.list li a{
+  color: #000;
+}
+.list li.res{
+  border: 1px solid #fff;
+  padding: 3px;
+  border-radius: 50%;
+  transition: 5s;
+  cursor: pointer !important;
+}
+.list li.res:hover{
+    background-color: red !important;
+}
 
+/* inner page hero */

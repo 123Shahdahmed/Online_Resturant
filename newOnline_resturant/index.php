@@ -14,7 +14,9 @@
 
 
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <!-- Font Awesome Free -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-KyZXEAg3QhqLMpG8r+Knujsl5+5hb7VYvG5X0y1xYFQzQkJoY5MlN1kq9qI0Y1qZfY+uh5l1U+FJmBJp4F3eLg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
 
     <!-- Bootstrap 5 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -61,13 +63,13 @@
     </header>
 
     <section class="hero bg-image" data-image-src="admin/images/img/pimg.jpg">
-        <div class="hero-inner">
+        <div class="hero-inner d-flex justify-content-center align-items-center">
             <div class="container text-center hero-text text-white">
                 <h1>Order Delivery & Take-Out</h1>
                 <div class="banner-form">
-                    <form class="d-flex justify-content-center"> <!-- Add your inputs here --> </form>
+                    <form class="d-flex justify-content-center align-items-center"> <!-- Add your inputs here --> </form>
                 </div>
-                <div class="steps d-flex justify-content-center gap-5 mt-4 flex-wrap"> <!-- Step 1 -->
+                <div class="steps d-flex justify-content-center gap-4 mt-2 flex-wrap"> <!-- Step 1 -->
                     <div class="step-item text-center"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 483 483"
                             width="80" height="80">
                             <g fill="#fff"> <!-- SVG Path (unchanged) --> </g>
@@ -93,7 +95,6 @@
 
     <section class="popular py-5">
         <div class="container">
-            <!-- عنوان القسم -->
             <div class="text-center mb-4">
                 <h2>Popular Dishes of the Month</h2>
                 <p class="lead">Easiest way to order your favourite food among these top 6 dishes</p>
@@ -139,13 +140,7 @@
                     <div class="how-it-works-step text-center p-4">
                         <div class="icon mb-3" data-step="1">
 
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 483 483" width="80" height="80">
-                                <g fill="#FFF">
-                                    <path d="M467.006 177.92c-.055-1.573..." />
-                                    <path
-                                        d="M202.494 386h22c5.799 0 10.5-4.701 10.5-10.5s-4.701-10.5-10.5-10.5h-22c-5.799 0-10.5 4.701-10.5 10.5s4.701 10.5 10.5 10.5z" />
-                                </g>
-                            </svg>
+                            <i class="fa-solid fa-utensils fa-2x"></i>
                         </div>
                         <h3>Choose a restaurant</h3>
                         <p>We've got you covered with menus from a variety of delivery restaurants online.</p>
@@ -157,12 +152,7 @@
                     <div class="how-it-works-step text-center p-4">
                         <div class="icon mb-3" data-step="2">
 
-                            <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80"
-                                viewBox="0 0 380.721 380.721">
-                                <g fill="#FFF">
-                                    <path d="M58.727 281.236c.32-5.217..." />
-                                </g>
-                            </svg>
+                            <i class="fa-solid fa-bell"></i>
                         </div>
                         <h3>Choose a dish</h3>
                         <p>We've got you covered with a variety of delivery restaurants online.</p>
@@ -173,9 +163,7 @@
                     <div class="how-it-works-step text-center p-4">
                         <div class="icon mb-3" data-step="3">
 
-                            <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 612 612">
-                                <path d="M604.131 440.17h-19.12V333.237..." fill="#FFF" />
-                            </svg>
+                            <i class="fa-solid fa-truck-fast"></i>
                         </div>
                         <h3>Pick up or Delivery</h3>
                         <p>Get your food delivered! And enjoy your meal!</p>
@@ -262,11 +250,11 @@
                 <div class="col-12 col-md-3 mb-4">
                     <h5 class="mb-3">Payment Options</h5>
                     <ul class="list-unstyled d-flex flex-wrap gap-3">
-                        <li><a href="#"><img src="admin/images/paypal.png" alt="Paypal" width="50"></a></li>
-                        <li><a href="#"><img src="admin/images/mastercard.png" alt="Mastercard" width="50"></a></li>
-                        <li><a href="#"><img src="admin/images/maestro.png" alt="Maestro" width="50"></a></li>
-                        <li><a href="#"><img src="admin/images/stripe.png" alt="Stripe" width="50"></a></li>
-                        <li><a href="#"><img src="admin/images/bitcoin.png" alt="Bitcoin" width="50"></a></li>
+                        <li><a href="#"><img src="admin/images/paypal.png" alt="Paypal" width="30"></a></li>
+                        <li><a href="#"><img src="admin/images/mastercard.png" alt="Mastercard" width="30"></a></li>
+                        <li><a href="#"><img src="admin/images/maestro.png" alt="Maestro" width="30"></a></li>
+                        <li><a href="#"><img src="admin/images/stripe.png" alt="Stripe" width="30"></a></li>
+                        <li><a href="#"><img src="admin/images/bitcoin.png" alt="Bitcoin" width="30"></a></li>
                     </ul>
                 </div>
 
