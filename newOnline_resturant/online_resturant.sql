@@ -86,7 +86,7 @@ INSERT INTO `dishes` (`d_id`, `rs_id`, `title`, `describtion`, `price`, `img`) V
 -- Table structure for table `remark`
 --
 
-CREATE TABLE `remark` (
+CREATE TABLE `remark` ( 
   `id` int(11) NOT NULL,
   `frm_id` int(11) NOT NULL,
   `status` varchar(255) NOT NULL,

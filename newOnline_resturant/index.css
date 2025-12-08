@@ -8,6 +8,15 @@
     
     
 }
+.dish{
+  background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: block;
+    width: 100%;
+    height: 50vh;
+    background-image: url('admin/images/img/restrrr.png');
+}
 .hero {
     padding: 120px 0;
     position: relative;

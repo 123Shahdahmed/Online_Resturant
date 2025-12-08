@@ -24,6 +24,8 @@ Reham Omar, [12/1/2025 11:14 PM]
 
     <!-- Bootstrap 5 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
 
 
     <link rel="stylesheet" href="index.css">
@@ -66,7 +68,7 @@ Reham Omar, [12/1/2025 11:14 PM]
 
 
     
-     <div class="page-wrapper">
+    <div class="page-wrapper">
         <!-- Top Links -->
         <div class="top-links">
             <div class="container" style="padding-top: 1rem;">
@@ -100,7 +102,7 @@ Reham Omar, [12/1/2025 11:14 PM]
 
 
 
- <section class="inner-page-hero bg-image" data-image-src="admin/images/img/restrrr.png">
+ <section class="inner-page-hero bg-image dish" data-image-src="admin/images/img/restrrr.png" style="background-image: url('admin/images/img/restrrr.png')">
     <div class="profile py-4">
         <div class="container">
             <div class="row align-items-center">
@@ -159,7 +161,7 @@ Reham Omar, [12/1/2025 11:14 PM]
                             <?php echo $item["title"]; ?>
                             <a href="dishes.php?res_id=<?php echo $_GET['res_id']; ?>&action=remove&id=<?php echo $item["d_id"]; ?>">
                                 <!-- <i class="fa-solid fa-trash-can"></i> -->
-                                 <button class="btn btn-primary">delet</button>
+                                 <button class="btn btn-danger">delet</button>
                             </a>
                         </div>
 
