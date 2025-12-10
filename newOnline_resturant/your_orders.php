@@ -1,4 +1,3 @@
-Reham Omar, [12/1/2025 11:14 PM]
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,19 +7,22 @@ Reham Omar, [12/1/2025 11:14 PM]
     error_reporting(0);
     session_start();
 
-    include_once 'product-action.php'; 
-
-    ?>
+    if(empty($_SESSION['user_id']))  
+{
+	header('location:login.php');
+}
+else
+{
+?>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dishes</title>
+    <title>your_order</title>
 
 
     <!-- Font Awesome -->
-    <!-- Font Awesome Free -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-        integrity="sha512-KyZXEAg3QhqLMpG8r+Knujsl5+5hb7VYvG5X0y1xYFQzQkJoY5MlN1kq9qI0Y1qZfY+uh5l1U+FJmBJp4F3eLg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
 
 
     <!-- Bootstrap 5 -->
@@ -30,7 +32,47 @@ Reham Omar, [12/1/2025 11:14 PM]
 
 
     <link rel="stylesheet" href="index.css">
-</head>
+<style type="text/css" rel="stylesheet">
+
+
+.indent-small {
+  margin-left: 5px;
+}
+.form-group.internal {
+  margin-bottom: 0;
+}
+.dialog-panel {
+  margin: 10px;
+}
+.datepicker-dropdown {
+  z-index: 200 !important;
+}
+.panel-body {
+  background: #e5e5e5;
+  /* Old browsers */
+  background: -moz-radial-gradient(center, ellipse cover, #e5e5e5 0%, #ffffff 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, #e5e5e5), color-stop(100%, #ffffff));
+  /* Chrome,Safari4+ */
+  background: -webkit-radial-gradient(center, ellipse cover, #e5e5e5 0%, #ffffff 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-radial-gradient(center, ellipse cover, #e5e5e5 0%, #ffffff 100%);
+  /* Opera 12+ */
+  background: -ms-radial-gradient(center, ellipse cover, #e5e5e5 0%, #ffffff 100%);
+  /* IE10+ */
+  background: radial-gradient(ellipse at center, #e5e5e5 0%, #ffffff 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#e5e5e5', endColorstr='#ffffff', GradientType=1);
+  font: 600 15px "Open Sans", Arial, sans-serif;
+}
+label.control-label {
+  font-weight: 600;
+  color: #777;
+}
+
+
+	</style>
+</head>    
 
 <body>
     <header id="header" class="header-scroll top-header headrom">
@@ -65,6 +107,108 @@ Reham Omar, [12/1/2025 11:14 PM]
             </div>
         </nav>
     </header>
+
+
+
+    <div class="page-wrapper">
+
+    <div class="inner-page-hero bg-image" style="background-image: url('images/img/pimg.jpg'); height:250px;">
+        <div class="container"></div>
+    </div>
+
+    <section class="restaurants-page py-5">
+        <div class="container">
+
+            <div class="row">
+                <div class="col-12">
+
+                    <div class="bg-light p-3 rounded shadow-sm">
+                        <div class="table-responsive">
+
+                            <table class="table table-bordered table-hover text-center align-middle">
+                                <thead style="background: #404040; color:white;">
+                                    <tr>
+                                        <th>Item</th>
+                                        <th>Quantity</th>
+                                        <th>Price</th>
+                                        <th>Status</th>
+                                        <th>Date</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+
+                                <?php 
+                                $query_res = mysqli_query($quer,"SELECT * FROM users_orders WHERE u_id='".$_SESSION['user_id']."'");
+                                
+                                if (!mysqli_num_rows($query_res)) {
+                                    echo '<tr><td colspan="6"><center>You have No orders placed yet.</center></td></tr>';
+                                } else {
+                                    while ($row = mysqli_fetch_array($query_res)) { ?>
+
+                                        <tr>
+                                            <td><?php echo $row['title']; ?></td>
+                                            <td><?php echo $row['quantity']; ?></td>
+                                            <td>$<?php echo $row['price']; ?></td>
+
+                                            <td>
+                                                <?php 
+                                                    $status = $row['status'];
+
+                                                    if ($status == "" || $status == "NULL") {
+                                                        echo '<button class="btn btn-info btn-sm">
+                                                                <i class="fa fa-bars"></i> Dispatch
+                                                              </button>';
+                                                    }
+
+                                                    if ($status == "in process") {
+                                                        echo '<button class="btn btn-warning btn-sm">
+                                                                <i class="fa fa-cog fa-spin"></i> On The Way!
+                                                              </button>';
+                                                    }
+
+                                                    if ($status == "closed") {
+                                                        echo '<button class="btn btn-success btn-sm">
+                                                                <i class="fa fa-check-circle"></i> Delivered
+                                                              </button>';
+                                                    }
+
+                                                    if ($status == "rejected") {
+                                                        echo '<button class="btn btn-danger btn-sm">
+                                                                <i class="fa fa-close"></i> Cancelled
+                                                              </button>';
+                                                    }
+                                                ?>
+                                            </td>
+
+                                            <td><?php echo $row['date']; ?></td>
+
+                                            <td>
+                                                <a href="delete_order.php?order_del=<?php echo $row['o_id'];?>"
+                                                   onclick="return confirm('Are you sure you want to cancel your order?');"
+                                                   class="btn btn-danger btn-sm">
+                                                    <i class="fa fa-trash"></i>
+                                                </a>
+                                            </td>
+                                        </tr>
+
+                                    <?php }} ?>
+
+                                </tbody>
+                            </table>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+</div>
+
 
 
 
@@ -129,3 +273,6 @@ Reham Omar, [12/1/2025 11:14 PM]
 </body>
 
 </html>
+<?php
+}
+?>

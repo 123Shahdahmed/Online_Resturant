@@ -1,4 +1,3 @@
-Reham Omar, [12/1/2025 11:14 PM]
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,20 +6,62 @@ Reham Omar, [12/1/2025 11:14 PM]
     include("connection/connection.php");
     error_reporting(0);
     session_start();
+    
 
-    include_once 'product-action.php'; 
+function function_alert() { 
+      
+
+    echo "<script>
+    alert('Thank you. Your Order has been placed!');
+    window.location.href='your_orders.php';
+    </script>";
+
+
+
+} 
+
+if(empty($_SESSION["user_id"]))
+{
+	header('location:login.php');
+}
+else{
+
+										  
+												foreach ($_SESSION["cart_item"] as $item)
+												{
+											
+												$item_total += ($item["price"]*$item["quantity"]);
+												
+													if(isset($_POST['submit']))
+													{
+						
+													$SQL="insert into users_orders(u_id,title,quantity,price) values('".$_SESSION["user_id"]."','".$item["title"]."','".$item["quantity"]."','".$item["price"]."')";
+						
+														mysqli_query($quer,$SQL);
+														
+                                                        
+                                                        unset($_SESSION["cart_item"]);
+                                                        unset($item["title"]);
+                                                        unset($item["quantity"]);
+                                                        unset($item["price"]);
+														$success = "Thank you. Your order has been placed!";
+
+                                                        function_alert();
+
+														
+														
+													}
+												}}
 
     ?>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dishes</title>
+    <title>checkout</title>
 
 
     <!-- Font Awesome -->
-    <!-- Font Awesome Free -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-        integrity="sha512-KyZXEAg3QhqLMpG8r+Knujsl5+5hb7VYvG5X0y1xYFQzQkJoY5MlN1kq9qI0Y1qZfY+uh5l1U+FJmBJp4F3eLg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+     <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
 
     <!-- Bootstrap 5 -->
@@ -63,6 +104,96 @@ Reham Omar, [12/1/2025 11:14 PM]
             </div>
         </nav>
     </header>
+
+
+    <div class="page-wrapper">
+
+    <!-- Top Steps Navigation -->
+    <div class="top-links py-3 bg-light border-bottom">
+        <div class="container">
+            <ul class="row list-unstyled text-center fw-bold mt-5">
+
+                <li class="col-12 col-sm-4 py-2">
+                    <span class="badge bg-primary me-2">1</span>
+                    <a href="restaurants.php" class="text-decoration-none">Choose Restaurant</a>
+                </li>
+
+                <li class="col-12 col-sm-4 py-2">
+                    <span class="badge bg-primary me-2">2</span>
+                    <a href="#" class="text-decoration-none">Pick Your Favorite Food</a>
+                </li>
+
+                <li class="col-12 col-sm-4 py-2 active">
+                    <span class="badge bg-success me-2">3</span>
+                    <a href="checkout.php" class="text-decoration-none text-success">Order and Pay</a>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+
+    <!-- Success message -->
+    <div class="container mt-3">
+        <span class="text-success fw-bold">
+            <?php echo $success; ?>
+        </span>
+    </div>
+
+    <!-- Cart Summary + Payment -->
+    <div class="container mt-4">
+
+        <form action="" method="post" class="p-4 border rounded shadow-sm bg-white">
+
+            <!-- Cart Summary -->
+            <h4 class="mb-3">Cart Summary</h4>
+
+            <table class="table table-bordered">
+                <tbody>
+                    <tr>
+                        <td>Cart Subtotal</td>
+                        <td><?php echo "$" . $item_total; ?></td>
+                    </tr>
+
+                    <tr>
+                        <td>Delivery Charges</td>
+                        <td>Free</td>
+                    </tr>
+
+                    <tr>
+                        <td><strong>Total</strong></td>
+                        <td><strong><?php echo "$" . $item_total; ?></strong></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- Payment Options -->
+            <h5 class="mt-4">Payment Method</h5>
+
+            <div class="form-check mb-3">
+                <input class="form-check-input" type="radio" name="mod" id="cod" value="COD" checked>
+                <label class="form-check-label" for="cod">
+                    Cash on Delivery
+                </label>
+            </div>
+
+            <div class="form-check mb-4">
+                <input class="form-check-input" type="radio" name="mod" id="paypal" value="paypal" disabled>
+                <label class="form-check-label" for="paypal">
+                    Paypal <img src="admin/images/paypal.jpg" width="90" class="ms-2">
+                </label>
+            </div>
+
+            <button type="submit" name="submit" class="btn btn-success w-100"
+                onclick="return confirm('Do you want to confirm the order?');">
+                Order Now
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
 
 
 

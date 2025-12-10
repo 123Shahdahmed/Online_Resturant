@@ -15,10 +15,8 @@ Reham Omar, [12/1/2025 11:14 PM]
 
 
     <!-- Font Awesome -->
-    <!-- Font Awesome Free -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-        integrity="sha512-KyZXEAg3QhqLMpG8r+Knujsl5+5hb7VYvG5X0y1xYFQzQkJoY5MlN1kq9qI0Y1qZfY+uh5l1U+FJmBJp4F3eLg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
 
 
     <!-- Bootstrap 5 -->
@@ -73,7 +71,7 @@ Reham Omar, [12/1/2025 11:14 PM]
                         <span class="res" style="border: 1px solid #fff;
                                         padding: 4px;
                                         border-radius: 50%;">1</span>
-                        <a href="#" style="color:#000">Choose Restaurant</a>
+                        <a href="restaurants.php" style="color:#000">Choose Restaurant</a>
                     </li>
                     <li class="col-xl-4 col-sm-12 link-item text-center mb-2 mb-sm-0">
                         <span class="res" style="border: 1px solid #fff;
@@ -85,7 +83,7 @@ Reham Omar, [12/1/2025 11:14 PM]
                         <span class="res" style="border: 1px solid #fff;
                                         padding: 4px;
                                         border-radius: 50%;">3</span>
-                        <a href="#" style="color:#000">Order and Pay</a>
+                        <a href="checkout.php" style="color:#000">Order and Pay</a>
                     </li>
                 </ul>
             </div>
