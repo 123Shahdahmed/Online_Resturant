@@ -61,28 +61,18 @@
         </nav>
     </header>
 
-    <section class="hero bg-image" data-image-src="admin/images/img/pimg.jpg">
+    <section class="hero bg-image " data-image-src="admin/images/img/pimg.jpg">
         <div class="hero-inner d-flex justify-content-center align-items-center">
             <div class="container text-center hero-text text-white">
                 <h1>Order Delivery & Take-Out</h1>
-                <div class="banner-form">
-                    <form class="d-flex justify-content-center align-items-center"> <!-- Add your inputs here --> </form>
-                </div>
-                <div class="steps d-flex justify-content-center gap-4 mt-2 flex-wrap"> <!-- Step 1 -->
-                    <div class="step-item text-center"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 483 483"
-                            width="80" height="80">
-                            <g fill="#fff"> <!-- SVG Path (unchanged) --> </g>
-                        </svg>
+                <div class="steps d-flex justify-content-center gap-4 mt-2 flex-wrap mt-2"> <!-- Step 1 -->
+                    <div class="step-item text-center"> 
                         <h4><span style="color:white;">1.</span> Choose Restaurant</h4>
                     </div> <!-- Step 2 -->
-                    <div class="step-item text-center"> <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80"
-                            viewBox="0 0 380.721 380.721">
-                            <g fill="#FFF"> <!-- SVG Path --> </g>
-                        </svg>
+                    <div class="step-item text-center"> 
                         <h4><span style="color:white;">2.</span> Order Food</h4>
                     </div> <!-- Step 3 -->
-                    <div class="step-item text-center"> <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80"
-                            viewBox="0 0 612.001 612"> <!-- SVG Path --> </svg>
+                    <div class="step-item text-center"> 
                         <h4><span style="color:white;">3.</span> Delivery or take out</h4>
                     </div>
                 </div>
@@ -109,7 +99,7 @@
                         <div class="figure-wrap" style="background-image: url(admin/Res_img/dishes/' . $r['img'] . '); background-size: cover; background-position: center; height: 200px;"></div>
                         <div class="card-body d-flex flex-column">
                             <h5 class="card-title"><a href="dishes.php?res_id=' . $r['rs_id'] . '" class="text-decoration-none">' . $r['title'] . '</a></h5>
-                            <p class="card-text">' . $r['slogan'] . '</p>
+                            <p class="card-text">' . $r['describtion'] . '</p>
                             <div class="mt-auto d-flex justify-content-between align-items-center">
                                 <span class="price fw-bold">$' . $r['price'] . '</span>
                                 <a href="dishes.php?res_id=' . $r['rs_id'] . '" class="btn btn-primary">Order Now</a>
@@ -225,7 +215,7 @@
                                         </a>
                                     </div>
                                     <div class="col-xs-12 col-sm-9 col-md-12 col-lg-9">
-                                        <h5><a href="#">' . $rows['title'] . '</a></h5>
+                                        <h5><a href="dishes.php?res_id='.$rows['rs_id'].'">' . $rows['title'] . '</a></h5>
                                         <span>' . $rows['address'] . '</span>
                                     </div>
                                 </div>

@@ -95,26 +95,22 @@ Reham Omar, [12/1/2025 11:14 PM]
 
 
 <!-- Result Show -->
-            <div class="result-show">
+            <!-- <div class="result-show">
                 <div class="container">
                     <div class="row">
-                        <!-- محتوى النتائج هنا -->
+                       
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
 
 
 
         <section class="restaurants-page mt-5">
             <div class="container">
                 <div class="row">
-
-                    <!-- العمود الأول -->
                     <div class="col-12 col-sm-5 col-md-5 col-lg-3">
                     </div>
-
-                    <!-- العمود الثاني -->
                     <div class="col-12 col-sm-7 col-md-7 col-lg-9">
                         <div class="bg-gray restaurant-entry p-3 rounded">
                             <div class="row">

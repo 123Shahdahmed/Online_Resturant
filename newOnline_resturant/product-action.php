@@ -60,4 +60,13 @@ switch($_GET["action"])
 			header("location:checkout.php");
 			break;
 	}
+
+if(isset($_GET['res_id'])) {
+        $res_id = intval($_GET['res_id']);
+        header("Location: dishes.php?res_id=$res_id");
+    } else {
+        header("Location: dishes.php"); 
+    }
+    exit();
 }
+?>
