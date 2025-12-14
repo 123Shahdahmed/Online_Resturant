@@ -1,0 +1,89 @@
+#sidebar a {
+    text-decoration: none;
+    color: #333;
+    font-size: 15px;
+}
+
+#sidebar a:hover {
+    color: #0d6efd;
+}
+
+#sidebar h5,
+#sidebar h6 {
+    font-weight: 600;
+}
+.container {
+    width: 80%;
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background: #fff;
+   
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.form-group {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input, select {
+    padding: 10px;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.btn {
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 15px;
+}
+
+.btn-primary {
+    background: #2196F3;
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #0b7dda;
+}
+
+.btn-cancel {
+    background: #777;
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.btn-cancel:hover {
+    background: #5a5a5a;
+}
+
+.alert {
+    padding: 12px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.alert-danger {
+    background: #ffdddd;
+    border-left: 4px solid red;
+}
+
+.alert-success {
+    background: #ddffdd;
+    border-left: 4px solid green;
+}
