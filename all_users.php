@@ -78,8 +78,8 @@
             </ul>
         </nav>
         <div class="containar">
-            <div class="page-title">
-                <h2>All Users</h2>
+            <div class="page-title ">
+                <h2 class="w-100">All Users</h2>
             </div>
 
             <div class="my-box">
