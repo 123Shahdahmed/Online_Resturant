@@ -50,7 +50,7 @@
                     </a>
 
                     <div class="collapse ps-4" id="restaurantCollapse">
-                        <a href="all_restaurant.php" class="d-block mb-2">All Restaurant</a>
+                        <a href="all_resturant.php" class="d-block mb-2">All Restaurant</a>
                         <a href="add_category.php" class="d-block mb-2">Add Category</a>
                         <a href="add_restaurant.php" class="d-block mb-2">Add Restaurant</a>
                     </div>
